@@ -50,6 +50,7 @@
     <th>Comment</th>
     <th>Posted</th>
   </tr>
+
   <% @photo.comments.each do |comment| %>
   <tr>
     <td>
@@ -64,6 +65,7 @@
       <%= time_ago_in_words(comment.created_at) %>
     </td>
   </tr>
+  
   <% end %>
 </table>
 
