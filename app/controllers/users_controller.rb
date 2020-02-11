@@ -15,8 +15,14 @@ class UsersController < ApplicationController
     user = User.new
 
     user.username = params.fetch("input_username")
-    user.save
-    redirect_to("/users/#{user.username}")
+
+    user_was_valid = user.save
+
+    if user_was_valid
+      redirect_to("/users/#{user.username}")
+    else
+      redirect_back({ :fallback_location => "/" })
+    end
   end
 
   def update
