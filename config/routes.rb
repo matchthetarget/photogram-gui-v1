@@ -36,7 +36,7 @@ Rails.application.routes.draw do
   # Comment routes
 
   # CREATE
-  post("/insert_comment_record", { :controller => "comments", :action => "create" })
+  get("/insert_comment_record", { :controller => "comments", :action => "create" })
 
   # DELETE
 
